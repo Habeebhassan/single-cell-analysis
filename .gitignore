@@ -1,0 +1,37 @@
+# R and Jupyter environment
+.Rhistory
+.RData
+.Rproj.user/
+.Rproj
+.ipynb_checkpoints/
+__pycache__/
+.vscode/
+.DS_Store
+
+# Large data files
+data/*.rds
+data/*.h5
+data/*.loom
+data/*.mtx
+data/*.csv
+data/*.tsv
+data/*.zip
+data/*.gz
+
+# Results and intermediate outputs
+results/*.rds
+results/*.h5
+results/*.loom
+results/*.csv
+results/*.tsv
+results/*.zip
+results/filtered_objects/*.rds
+results/*.gz
+results/*.pdf
+
+# Log files
+*.log
+*.out
+*.err
+
+seurat_data

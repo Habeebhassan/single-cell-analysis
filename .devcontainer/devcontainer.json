@@ -1,0 +1,50 @@
+{
+  "name": "Single-Cell Analysis",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "r.rpath.linux": "/usr/local/bin/R",
+        "r.lsp.debug": true,
+        "r.lsp.diagnostics": true,
+        "r.plot.useHttpgd": true,
+        "r.sessionWatcher": true,
+        "r.bracketedPaste": true,
+        "r.lsp.lang": "en",
+        "r.lsp.richDocumentation": true,
+        "r.lsp.snippetSupport": true,
+        "python.pythonPath": "/usr/bin/python3",
+        "python.terminal.activateEnvironment": false,
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        "files.autoSave": "afterDelay",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": true
+        }
+      },
+      "extensions": [
+        "ikuyadeu.r",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "quarto.quarto",
+        "ms-vscode.makefile-tools",
+        "github.copilot",
+        "github.copilot-chat",
+        "mechatroner.rainbow-csv",
+        "gruntfuggly.todo-tree"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/media/workspace/4f1d6914-c8de-4f37-b4bd-fd311d8ef82d1/SAARLAND UNIVERSITY/Msc course/WS 2025_26/single-cell/single-cell-analysis/data,type=bind",
+    "source=${localWorkspaceFolder}/results,target=/media/workspace/4f1d6914-c8de-4f37-b4bd-fd311d8ef82d1/SAARLAND UNIVERSITY/Msc course/WS 2025_26/single-cell/single-cell-analysis/results,type=bind",
+    "source=${localWorkspaceFolder}/scripts,target=/media/workspace/4f1d6914-c8de-4f37-b4bd-fd311d8ef82d1/SAARLAND UNIVERSITY/Msc course/WS 2025_26/single-cell/single-cell-analysis/scripts,type=bind",
+    "source=${localWorkspaceFolder}/notebooks,target=/media/workspace/4f1d6914-c8de-4f37-b4bd-fd311d8ef82d1/SAARLAND UNIVERSITY/Msc course/WS 2025_26/single-cell/single-cell-analysis/Notebook,type=bind",
+    "source=${localWorkspaceFolder}/references,target=/media/workspace/4f1d6914-c8de-4f37-b4bd-fd311d8ef82d1/SAARLAND UNIVERSITY/Msc course/WS 2025_26/single-cell/single-cell-analysis/references,type=bind"
+  ],
+  "postCreateCommand": "R -e 'install.packages(\"httpgd\")' && echo 'Setup complete!'",
+  "remoteUser": "root"
+}
