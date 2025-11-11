@@ -26,6 +26,7 @@ results/*.csv
 results/*.tsv
 results/*.zip
 results/filtered_objects/*.rds
+results/processed_objects/*.rds
 results/*.gz
 results/*.pdf
 
